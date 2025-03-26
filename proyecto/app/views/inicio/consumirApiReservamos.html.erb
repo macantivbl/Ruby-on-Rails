@@ -1,0 +1,21 @@
+<select id="sEstadoSeleccionado" class="form-select" aria-label="Default select example">
+    <option value="" selected>Seleccione el Lugar</option>
+    <% i = 1 %>
+    <% @Lugares.each do |user| %>
+        <option value="<%= i %>"><%= user["city_slug"] %> <%= user["display"] %></option>
+        <% i += 1 %>
+    <% end %>
+</select>
+
+<% if @Lugares.any? %>
+  <div class="alert alert-primary" role="alert">
+      Latitud: <%= @Lugares.last["lat"] %>, 
+      Longitud: <%= @Lugares.last["long"] %>
+      Temperatura: <%= @temperatura%>
+  </div>
+<% end %>
+
+
+
+
+        
